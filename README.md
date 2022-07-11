@@ -10,5 +10,6 @@ Teste para Binds. Sistema conectado com a API PokeApi que exibe lista completa d
 - HTML5
 - CSS3
 
-## 
+## Acesse aqui:
+https://tiago-mota09.github.io/PokeBinds_HTML-CSS/
 
