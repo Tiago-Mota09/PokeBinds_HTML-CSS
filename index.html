@@ -8,22 +8,33 @@
     <title>PokeBinds</title>
   </head>
   <body>
+    <div class="logo">
+      <img src="logo.png" alt="" width="25%">
+    </div>
      <div class="container">
-    <h1>PokeBinds</h1>
+    <h1>PokeBinds</h1><br><br>
     <ul data-js="pokedex" class="pokedex"></ul>
   </div>
   
   <!--<script src="./app.js"></script>
   https://www.youtube.com/watch?v=Uptu3NrBFBM
   -->
- 
-
+ <div class="footer">
+  <footer>by Tiago Mota
+    <div class="social">
+      <a href="https://github.com/Tiago-Mota09?tab=repositories" target="_blank"><img src="githubB.png" alt=""></a>
+      <a href="https://www.instagram.com/tiago_mota.art/" target="_blank"><img src="instagramB.png" alt=""></a>
+      <a href="https://www.instagram.com/tiago.mota.photo.art/" target="_blank"><img src="instagramB.png"  alt=""></a>
+      <a href="https://www.linkedin.com/in/tiago-mota-2a161a164/" target="_blank"><img src="linkedinB.png" alt=""></a>
+    </div>
+  </footer>
+</div>
   </body>
 </html>
 
 <script>
     const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`
-const generatePokemonPromises = () => Array(150).fill().map((_, index) =>
+const generatePokemonPromises = () => Array(151).fill().map((_, index) =>
   (fetch(getPokemonUrl(index + 1)).then(response => response.json()))
 )
 
@@ -33,7 +44,7 @@ const generateHTML = pokemons => {
 
     accumulator += `
       <li class="card ${elementTypes[0]}">
-         <img class="card-image alt="${name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$%7Bid%7D.png%22/%3E</img>
+        <img class="card-image alt="${name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$%7Bid%7D.png%22/%3E</img>
         <h2 class="card-title">${id}. ${name}</h2>
         <p class="card-subtitle">${elementTypes.join(" | ")}</p>
       </li>
@@ -66,9 +77,12 @@ body {
   background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
   color: white;
   margin: 0;
-  font-family: rubik;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
-
+.logo{
+  display: flex;
+  justify-content: center;
+}
 .container {
   padding: 40px;
   margin: 0 auto;
@@ -199,7 +213,21 @@ h1 {
   position: relative;
   z-index: 2;
 }
-
+.footer{
+  color: #48c774;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.social img{
+  width: 30px;
+  margin: 10px;
+}
+.social img:hover{
+  width: 32px;
+  transform: translate(3px, -3px);
+  transition: transform 0.3s;
+}
 @keyframes bounce {
   20% {
     transform: translateY(-6px);
